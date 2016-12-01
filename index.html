@@ -44,7 +44,7 @@
 				<h1 class="site-name"><a href="/" title="C6J&#39;s Blog">C6J&#39;s Blog</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -60,7 +60,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -78,6 +78,65 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/12/01/opencv_android/" title="Android配置opencv环境" itemprop="url">Android配置opencv环境</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="C6J" target="_blank" itemprop="author">C6J</a>
+		
+  <p class="article-time">
+    <time datetime="2016-12-01T01:52:33.296Z" itemprop="datePublished"> 发表于 2016-12-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>作为一只前端狗，因为要写人机交互实验，写手机照相机的手势识别所以用Android配了一波opencv环境，心里苦。好吧，中间看了很多教程，也踩了很多坑，一直不喜欢配环境，好吧，现在开始说配置过程吧</p>
+<ol>
+<li>下载：首先进入opencv官网<a href="http://opencv.org/" target="_blank" rel="external">http://opencv.org/</a><br><img src="http://upload-images.jianshu.io/upload_images/3282849-bc66483757eea6e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入下载页面，点击划红线部分，下载压缩包"><br>下载之后解压完之后，目录结构是这样的<br><img src="http://upload-images.jianshu.io/upload_images/3282849-856fef5a04b35113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="\OpenCV-3.1.0-android-sdk目录结构"><br>sdk目录即是我们开发opencv所需要的类库；samples目录中存放着若干opencv应用示例（包括人脸检测等），可为我们进行android下的opencv开发提供参考；doc目录为opencv类库的使用说明及api文档等；而apk目录则存放着对应于各内核版本的OpenCV_2.4.3.2_Manager_2.4应用安装包。一开始我根据网上的教程也装了opencv manager ，不过后来我把这个apk卸载之后发现也可以用qaq。然后再看了一下apk下的readme文件，自1.7版以来，OpenCV管理器的几个软件包被构建。每个软件包都针对一些特定的硬件平台，包括相应的OpenCV二进制文件。 所以，在所有情况下，OpenCV Manager使用内置版本的OpenCV。 新的软件包选择逻辑在大多数情况下简化了在最终用户设备上的OpenCV安装。 在大多数情况下，OpenCV Manager可能会从Google Play自动安装。但是在模拟机或者开发板中还是需要安装opencvmanager。</li>
+<li>将opencv引入Android Studio<br>在Android studio中 点击File -&gt;new -&gt;import module,<br><img src="http://upload-images.jianshu.io/upload_images/3282849-d28020be733edc86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>之后会出现这个窗口<br><img src="http://upload-images.jianshu.io/upload_images/3282849-91670783a3c2d1aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后找到OpenCV解压的路径，选择sdk/java文件夹。</li>
+<li>更新 build.gradle文件<br>然后会发现特别多地方报错，这是因为opencv-Android的在这里的bulid文件和项目中的不一样,将划红线部分的信息改为和app文件夹下的build.gradle中信息相一致<br><img src="http://upload-images.jianshu.io/upload_images/3282849-2c6e0b990d23e34a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>添加Module Dependency<br>点击File选择 project structure<br><img src="http://upload-images.jianshu.io/upload_images/3282849-19f6639ecc7a7055.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>然后点击右上角的加号<br><img src="http://upload-images.jianshu.io/upload_images/3282849-1532cb2ce4a8f2fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>然后<br><img src="http://upload-images.jianshu.io/upload_images/3282849-9649ed613525f5d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>点击ok，然后再一路确定。</li>
+<li>复制libs文件夹到项目中<br>在OpenCV的解压包中，将sdk–&gt;native–&gt;libs文件夹复制，粘贴在Project视图下app–&gt;src–&gt;main目录下，并将其重命名为jniLibs。</li>
+</ol>
+<p>这样在Android中的opencv环境就配好了，当让这只是只写java版的opencv环境，如果要写c++的代码还需要配置ndk环境。</p>
+<p>参考博文：<a href="http://www.cnblogs.com/tail/p/4618476.html" target="_blank" rel="external">http://www.cnblogs.com/tail/p/4618476.html</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/11/10/happiness/" title="所以幸hu呢" itemprop="url">所以幸hu呢</a>
   </h1>
   <p class="article-author">By
@@ -85,7 +144,7 @@
 		<a href="/about" title="C6J" target="_blank" itemprop="author">C6J</a>
 		
   <p class="article-time">
-    <time datetime="2016-11-10T07:17:52.087Z" itemprop="datePublished"> Published 2016-11-10</time>
+    <time datetime="2016-11-10T07:17:52.087Z" itemprop="datePublished"> 发表于 2016-11-10</time>
     
   </p>
 </header>
@@ -140,7 +199,7 @@
 		<a href="/about" title="C6J" target="_blank" itemprop="author">C6J</a>
 		
   <p class="article-time">
-    <time datetime="2016-10-12T14:37:11.025Z" itemprop="datePublished"> Published 2016-10-12</time>
+    <time datetime="2016-10-12T14:37:11.025Z" itemprop="datePublished"> 发表于 2016-10-12</time>
     
   </p>
 </header>
@@ -267,7 +326,7 @@
 		<a href="/about" title="C6J" target="_blank" itemprop="author">C6J</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-05T08:37:44.055Z" itemprop="datePublished"> Published 2016-09-05</time>
+    <time datetime="2016-09-05T08:37:44.055Z" itemprop="datePublished"> 发表于 2016-09-05</time>
     
   </p>
 </header>
@@ -314,10 +373,10 @@
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -328,7 +387,7 @@
   
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -350,11 +409,11 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
+  <p class="asidetitle">新浪微博</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -504,7 +563,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
