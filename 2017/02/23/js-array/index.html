@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2016/9 | C6J&#39;s Blog</title>
+    <title>javascript之数组 | C6J&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="C6J's Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/09/index.html">
+        <meta name="keywords" content="js,前端" />
+    
+    <meta name="description" content="基础储备数组的本质就是一种特殊的对象，使用typeof可以返回数组的类型是Object，然后数组的特殊性在于他的键名是按次序排列的一组整数（0，1，2…）。
+
+JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript之数组">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/js-array/index.html">
 <meta property="og:site_name" content="C6J's Blog">
+<meta property="og:description" content="基础储备数组的本质就是一种特殊的对象，使用typeof可以返回数组的类型是Object，然后数组的特殊性在于他的键名是按次序排列的一组整数（0，1，2…）。
+
+JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3282849-92e1a4e128cd6095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-23T08:36:52.916Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C6J's Blog">
+<meta name="twitter:title" content="javascript之数组">
+<meta name="twitter:description" content="基础储备数组的本质就是一种特殊的对象，使用typeof可以返回数组的类型是Object，然后数组的特殊性在于他的键名是按次序排列的一组整数（0，1，2…）。
+
+JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3282849-92e1a4e128cd6095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
 
     
@@ -120,73 +134,134 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档: 2016/9
+    <a class="page-title-link" href="/categories/前端/">前端</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-js-array" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/09/05/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2016/09/05/hello-world/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-09-05T08:37:44.055Z" itemprop="datePublished">2016-09-05</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/05/hello-world/">hello world</a>
+        javascript之数组
         </h1>
     
 
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2017/02/23/js-array/" class="article-date">
+    <time datetime="2017-02-23T08:34:21.000Z" itemprop="datePublished">2017-02-23</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="基础储备"><a href="#基础储备" class="headerlink" title="基础储备"></a>基础储备</h2><p>数组的本质就是一种特殊的对象，使用typeof可以返回数组的类型是Object，然后数组的特殊性在于他的键名是按次序排列的一组整数（0，1，2…）。<br><img src="http://upload-images.jianshu.io/upload_images/3282849-92e1a4e128cd6095.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="键名类型"></p>
+<blockquote>
+<p>JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。<br>由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。</p>
+</blockquote>
+<p>所以我们在上面截图中得到的键名是“0”，“1”；<br>如果一个值可以被转换为 <strong>整数</strong> ，则以该值为键名，等于以对应的整数为键名。<br><img src="http://upload-images.jianshu.io/upload_images/3282849-7c1c1a56a129de43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用可以转为整数字符串做键名"><br><img src="http://upload-images.jianshu.io/upload_images/3282849-b9799f6f328dac76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="必须要是能转为整数，5.0浮点数可以转为整数5，而5.1不能转为整数5"></p>
+<p>##问题<br>但是当我们用arr[‘p’] =3;的时候，我们会发现并不会改变arr.length属性<br><img src="http://upload-images.jianshu.io/upload_images/3282849-0a8e287b82756ab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arr.length并没有改变"><br>但是我们打印arr的时候就会出现下列结果<br><img src="http://upload-images.jianshu.io/upload_images/3282849-53ca5a17a24f5fc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="为什么length不改变，但是打印arr为什么有p属性 呢"><br>这是为什么呢？<br>查阅了很多资料，然后再找到了关键</p>
+<ol>
+<li>数组的属性length的基本功能是追踪数组的最大索引<br>2.<strong>length</strong>属性表示一个无符号 32-bit 整数，返回一个数组中的元素个数。</li>
+<li>一个属性键n(假设n为字符串)是某个数组的索引当且仅当ToString（ToUint32(n））等于n且ToUnit32(n)不等于2<sup>32</sup> -1,</li>
+<li>数组属性的键是数组索引，这个属性成为元素，也可以理解为数组成员，</li>
+<li>换句话说，在规范中所有方括号中的值，甚至是数字，都可以转换为字符串且解释为属性的键。</li>
+<li>属性n（字符串）如果要作为数组索引必须等于把P转换为的数字，等于把数字转换为32位无符号的整数，等于把整型转化为的字符串，即数组的索引必须是字符串化的整型，而且是在0&lt;=i<2<sup>32-1范围内。</2<sup></li>
+</ol>
+<p>在例子中arr[‘p’]中的p，将‘p’进行转换实验</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3282849-e9c0266df39ee384.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>因为,<strong>  属性n（字符串）如果要作为数组索引必须等于（把P转换为数字，把数字转换为32位无符号整数，把整型转化为字符串）</strong>，但是上面实验截图现实’p’即不等于将’p’转换的数字，也不等于将这个数字转换了的32位无符号整数，也不等于将这个整型转换为的字符串。所以p不能作为数组索引，而只是数组的一个属性了。因此当属性n（字符串）不是一个字符串化的整型时，或者不在范围0&lt;=i<2<sup>32-1范围内时，他的效果就是数组的一个属性（数组也是一个对象，这个n只是该对象的一个普通属性），<br><img src="http://upload-images.jianshu.io/upload_images/3282849-5f33dd9cae9c75f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="arr[&#39;p&#39;] =&#39;y&#39;的效果和作用和arr.p =&#39;y&#39;是一样的"><br>因此，解释到这里，就能理解为什么当使用arr[‘p’] =3的时候，并不会改变arr.length属性。因为arr[‘p’]不是数组元素，而length是返回数组的元素个数的属性，索引增加arr[‘p’]不会改变length的长度。</2<sup></p>
+<p>##小知识</p>
+<blockquote>
+<p>Array对象的length属性是一个数据属性，其值始终大于每个可删除属性的名称，其名称为数组索引。<br>length属性最初具有属性{[[Writable]]：true，[[Enumerable]]：false，[[Configurable]]：false}。</p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2017/02/23/js-array/" data-id="cizi50y8i00095ww96zbsp19d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -231,6 +306,19 @@ Quick
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/02/23/biancheng/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">所谓爱情，所谓边城</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -428,11 +516,13 @@ Quick
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2017/02/23/js-array/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
